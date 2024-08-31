@@ -62,6 +62,52 @@
 		"admin": {
 			"show": true
 		},
-		"jwt_expiry": "-1"
+		"jwt_expiry": "30s"
+	},
+	"openai": {
+		"api_base_urls": [
+			" https://api.groq.com/openai/v1"
+		],
+		"api_keys": [
+			"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"
+		]
+	},
+	"ollama": {
+		"enable": true,
+		"base_urls": [
+			"http://localhost:11434"
+		]
+	},
+	"audio": {
+		"tts": {
+			"openai": {
+				"api_base_url": "https://api.openai.com/v1",
+				"api_key": ""
+			},
+			"engine": "",
+			"model": "tts-1",
+			"voice": "Microsoft Ravi - English (India)"
+		},
+		"stt": {
+			"openai": {
+				"api_base_url": "https://api.openai.com/v1",
+				"api_key": ""
+			},
+			"engine": "",
+			"model": "whisper-1"
+		}
+	},
+	"rag": {
+		"embedding_engine": "",
+		"embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+		"pdf_extract_images": false,
+		"CONTENT_EXTRACTION_ENGINE": "",
+		"tika_server_url": "http://tika:9998",
+		"chunk_size": 1500,
+		"chunk_overlap": 100,
+		"template": "Use the following context as your learned knowledge, inside <context></context> XML tags.\n<context>\n    [context]\n</context>\n\nWhen answer to user:\n- If you don't know, just say that you don't know.\n- If you don't know when you are not sure, ask for clarification.\nAvoid mentioning that you obtained the information from the context.\nAnd answer according to the language of the user's question.\n\nGiven the context information, answer the query.\nQuery: [query]",
+		"top_k": 5,
+		"relevance_threshold": 0.0,
+		"enable_hybrid_search": false
 	}
 }
